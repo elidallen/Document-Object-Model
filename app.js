@@ -1,6 +1,6 @@
 
 // DOM interactions
-const taskInput = document.getElementById('taskInput');
+const taskInput = document.querySelector('#taskInput');
 const addTaskButton = document.getElementById('addTask');
 const taskList = document.getElementById('taskList');
 
@@ -64,6 +64,26 @@ addTaskButton.addEventListener('click', addNewTask);
 taskInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         addNewTask();
+    }
+});
+
+taskList.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        const taskItem = event.target.parentElement;
+
+        if (event.target.textContent === 'Complete') {
+            // Mark task as completed
+            const index = Array.from(taskItem.parentNode.children).indexOf(taskItem);
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks();
+            renderTasks();
+        } else if (event.target.textContent === 'Delete') {
+            // Delete task
+            const index = Array.from(taskItem.parentNode.children).indexOf(taskItem);
+            tasks.splice(index, 1);
+            saveTasks();
+            renderTasks();
+        }
     }
 });
 
