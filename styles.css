@@ -11,10 +11,11 @@ body {
 
 object {
     position: fixed;
-    top: 70%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
+    height: 400px;
 }
 
 h1 {
@@ -45,7 +46,8 @@ h1 {
 #taskList {
     list-style: none;
     padding: 0;
-    padding: 0px;
+    max-height: 200px; /* Set a maximum height for the task list container */ 
+    overflow-y: auto; /* Add a vertical scrollbar if the content exceeds the max height */
 }
 #taskList li {
     margin: 0 0 10px; /* Set the left margin to 0 and keep other margins as they are */
