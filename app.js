@@ -39,6 +39,9 @@ function renderTasks() {
             tasks[index].completed = !task.completed;
             saveTasks();
             renderTasks();
+            
+            // Remove focus from the input field
+            taskInput.blur();
         });
 
         // Button to delete task

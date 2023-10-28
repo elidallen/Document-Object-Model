@@ -1,4 +1,98 @@
+/* Apply styles to the task list items */
+body {
+    display: flex;
+    flex-direction: column; /* This will make child elements stack vertically */
+    height: 100vh; /* Set the body to take the full viewport height */
+    align-items: center;
+    background-color: #f2f2f2; /* Light gray background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+object {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+h1 {
+    color: white;
+}
+#Image {
+    width: 100%; /* Set the width to 100% of its container */
+    max-width: 800px; /* Limit the maximum width to 800 pixels */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    border: 1px solid #ccc; /* Add a 1px border with a color of #ccc */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    margin-left: 400px;
+    margin-top: 200px;
+}
+
+#box {
+    background-color: #888;
+    width: 1600px;
+    height: 120vh; /* Set the height to 120vh to extend beyond the viewport */
+    margin: 0;
+    position: absolute; /* Position the box absolutely */
+    top: -10vh; /* Move the box 10vh above the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    min-height: 100vh; /* Set a minimum height to prevent the "object" from moving */
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    padding: 0px;
+}
+#taskList li {
+    margin: 0 0 10px; /* Set the left margin to 0 and keep other margins as they are */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9; /* Light gray background color for task items */
+}
+
+/* Apply styles to completed tasks */
 .completed {
-    text-decoration: line-through; 
-    color: #888; 
+    text-decoration: line-through;
+    color: #888; /* Gray text color for completed tasks */
+}
+
+/* Style the task input and add task button */
+#taskInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+
+#addTask {
+    width: 120px;
+    height: 35px;
+    font-size: 16px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style the complete and delete buttons */
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0px;
 }
